@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Login</title>
+  <!-- ========== font Awesome ========== -->
+  <!-- ========== Google Fonts ========== -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap"
+    rel="stylesheet"> -->
+  <!-- ========== Bootstrap Style ========== -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- ========== Main Style ========== -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="">
+
+<!-- Log In -->
+  <section  class="header ">
+    <div class="layer ">
+      <div class="login-card w-50 m-auto rounded-4 px-4">
+        <div class="title text-center my-4">
+          <h1 class="text-capitalize text-info fw-medium ">smart login system</h1>
+        </div>
+        <div class="inputs">
+          <input id="mail" type="text" class="form-control mb-3" placeholder="Enter Your Email">
+          <input id="pass" type="password" class="form-control" placeholder="Enter Your Password">
+          <span id="login-message" class="text-center d-none mt-3"></span>
+        </div>
+          <input id="login-btn" type="submit" class="form-control btn btn-outline-info mt-4" value="Login" onclick="getSignin()">
+        <div class="line my-3 text-center">
+          <span>Don’t have an account?</span>
+          <a href="signUP.html" class="text-info">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
