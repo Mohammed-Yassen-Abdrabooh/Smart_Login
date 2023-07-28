@@ -19,10 +19,11 @@ if (localStorage.getItem("userRegist") === null) {
 
 
 //==================Validation Function=====================
-// var passRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
 
 var nameRegExp = /^[A-Z]{1}\w{3,}(\s[A-Z]{1}\w{3,})?/;
 var mailRegExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+// var passRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/; //Complex Regex
+var passRegExp = /^\d{6,8}/; //simple Regex;
 
 function validate(element, regex) {
   if (regex.test(element.value)) {
@@ -40,7 +41,7 @@ function getSignup() {
     uPass: pass.value
   }
 
-  if (validate(naame, nameRegExp) === true && validate(mail, mailRegExp) === true) {
+  if (validate(naame, nameRegExp) === true && validate(mail, mailRegExp) === true && validate(pass, passRegExp) === true) {
     // for (var i = 0; i <= signupList.length-1; i++) {
     //   if (signupList[i].uMail === mail.value) {
     //     signupMessage.innerHTML = "This email already exists write anoter one";
@@ -64,6 +65,11 @@ function getSignup() {
     multiFunc();
     }else if (validate(mail, mailRegExp) !== true){
     signupMessage.innerHTML = "Your Email is not valid ";
+    signupMessage.style.color = "red";
+    signupMessage.classList.replace("d-none", "d-block");
+    multiFunc();
+    } else if (validate(pass, passRegExp) !== true) {
+    signupMessage.innerHTML = "Your Password is not valid ";
     signupMessage.style.color = "red";
     signupMessage.classList.replace("d-none", "d-block");
     multiFunc();
